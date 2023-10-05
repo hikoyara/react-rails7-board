@@ -1,11 +1,6 @@
-import { Link } from "react-router-dom";
+import * as React from "react";
+import SignInForm from "../components/SignInForm";
 
-const SignIn = () => {
-    return (
-        <div>
-            <Link to="/signUp">登録画面</Link>
-        </div>
-    );
-};
-
-export default SignIn;
+export default function SignIn() {
+    return <SignInForm />;
+}
