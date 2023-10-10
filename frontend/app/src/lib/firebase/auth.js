@@ -1,0 +1,23 @@
+import { auth } from "../config";
+/* firebase */
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+
+export const signUp = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log(userCredential.user.uid);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
+export const signIn = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            console.log(userCredential.user.uid);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};
