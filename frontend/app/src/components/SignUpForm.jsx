@@ -14,6 +14,8 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 /* lib */
 import { signUp } from "../lib/firebase/auth";
+/* router */
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
     return (
@@ -31,10 +33,16 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignUpForm() {
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        signUp(data.get("email"), data.get("password"));
+        signUp(data.get("email"), data.get("password"))
+            .then(() => {
+                navigate("/board");
+            })
+            .catch(() => {});
     };
 
     return (

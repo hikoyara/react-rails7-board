@@ -9,7 +9,16 @@ import { useNavigate } from "react-router-dom";
 export default function SignIn() {
     const navigate = useNavigate();
     useEffect(() => {
-        getUser && navigate("/board");
+        const register = async () => {
+            const user = await getUser();
+            if (user) {
+                navigate("/board");
+            } else {
+                console.log("ログインしていません。");
+            }
+        };
+
+        register();
     }, [navigate]);
 
     return <SignInForm />;
