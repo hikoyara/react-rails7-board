@@ -1,6 +1,6 @@
 import { auth } from "../config";
 /* firebase */
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 
 export const signUp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
@@ -20,4 +20,14 @@ export const signIn = (email, password) => {
         .catch((error) => {
             console.log(error);
         });
+};
+
+export const getUser = () => {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            return true;
+        } else {
+            return false;
+        }
+    });
 };
