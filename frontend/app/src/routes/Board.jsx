@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+/* components */
+import Dashboard from "../components/Dashboard";
 /* lib */
 import { logout, getUser } from "../lib/firebase/auth";
 /* router */
@@ -30,10 +32,11 @@ const Board = () => {
     }, [navigate]);
 
     return (
-        <div>
-            <Link to="/">ホームへ</Link>
-            <button onClick={handleLogout}>ログアウト</button>
-        </div>
+        // <div>
+        //     <Link to="/">ホームへ</Link>
+        //     <button onClick={handleLogout}>ログアウト</button>
+        // </div>
+        <Dashboard />
     );
 };
 
