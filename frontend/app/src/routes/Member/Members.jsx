@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 /* components */
-import Dashboard from "../components/Dashboard";
+import Dashboard from "../../components/Dashboard";
 /* lib */
-import { logout, getUser } from "../lib/firebase/auth";
+import { logout, getUser } from "../../lib/firebase/auth";
 /* router */
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
+const Members = () => {
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -31,10 +31,10 @@ const Home = () => {
     }, [navigate]);
 
     return (
-        <Dashboard handleLogout={handleLogout} selected={1}>
-            <p>ホーム</p>
+        <Dashboard handleLogout={handleLogout} selected={3}>
+            <p>メンバー</p>
         </Dashboard>
     );
 };
 
-export default Home;
+export default Members;
