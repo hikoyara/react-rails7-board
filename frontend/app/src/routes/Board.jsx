@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useEffect } from "react";
 /* components */
 import Dashboard from "../components/Dashboard";
@@ -31,13 +30,7 @@ const Board = () => {
         register();
     }, [navigate]);
 
-    return (
-        // <div>
-        //     <Link to="/">ホームへ</Link>
-        //     <button onClick={handleLogout}>ログアウト</button>
-        // </div>
-        <Dashboard handleLogout={handleLogout} />
-    );
+    return <Dashboard handleLogout={handleLogout} />;
 };
 
 export default Board;
