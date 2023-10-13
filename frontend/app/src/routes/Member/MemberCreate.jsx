@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 /* components */
 import Dashboard from "../../components/Dashboard";
+import MemberCreateForm from "../../components/MemberCreateForm";
 /* lib */
 import { logout, getUser } from "../../lib/firebase/auth";
 /* router */
@@ -32,7 +33,7 @@ const MemberCreate = () => {
 
     return (
         <Dashboard handleLogout={handleLogout} selected={4}>
-            <p>メンバー作成</p>
+            <MemberCreateForm />
         </Dashboard>
     );
 };
