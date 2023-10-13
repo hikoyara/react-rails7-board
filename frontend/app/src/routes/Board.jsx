@@ -36,7 +36,7 @@ const Board = () => {
         //     <Link to="/">ホームへ</Link>
         //     <button onClick={handleLogout}>ログアウト</button>
         // </div>
-        <Dashboard />
+        <Dashboard handleLogout={handleLogout} />
     );
 };
 
