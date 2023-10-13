@@ -5,6 +5,8 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AssignmentIcon from "@mui/icons-material/Assignment";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
 
 export const mainListItems = (
     <React.Fragment>
@@ -26,25 +28,19 @@ export const mainListItems = (
 export const secondaryListItems = (
     <React.Fragment>
         <ListSubheader component="div" inset>
-            Saved reports
+            Members
         </ListSubheader>
         <ListItemButton>
             <ListItemIcon>
-                <AssignmentIcon />
+                <PeopleAltIcon />
             </ListItemIcon>
-            <ListItemText primary="Current month" />
+            <ListItemText primary="All Members" />
         </ListItemButton>
         <ListItemButton>
             <ListItemIcon>
-                <AssignmentIcon />
+                <GroupAddIcon />
             </ListItemIcon>
-            <ListItemText primary="Last quarter" />
-        </ListItemButton>
-        <ListItemButton>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Year-end sale" />
+            <ListItemText primary="Add Member" />
         </ListItemButton>
     </React.Fragment>
 );

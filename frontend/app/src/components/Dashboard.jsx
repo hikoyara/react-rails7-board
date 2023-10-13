@@ -16,7 +16,7 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "@mui/material/Button";
-import { mainListItems } from "./ListItems";
+import { mainListItems, secondaryListItems } from "./ListItems";
 // import Chart from "./Chart";
 // import Deposits from "./Deposits";
 // import Orders from "./Orders";
@@ -82,7 +82,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
 const defaultTheme = createTheme();
 
 export default function Dashboard(props) {
-    const { handleLogout } = props;
+    const { children, handleLogout } = props;
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
@@ -135,7 +135,7 @@ export default function Dashboard(props) {
                     <List component="nav">
                         {mainListItems}
                         <Divider sx={{ my: 1 }} />
-                        {/* {secondaryListItems} */}
+                        {secondaryListItems}
                     </List>
                 </Drawer>
                 <Box
@@ -179,6 +179,7 @@ export default function Dashboard(props) {
                                     <Orders />
                                 </Paper>
                             </Grid> */}
+                            {children}
                         </Grid>
                         <Copyright sx={{ pt: 4 }} />
                     </Container>

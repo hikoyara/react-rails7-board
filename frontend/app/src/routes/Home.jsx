@@ -30,7 +30,11 @@ const Home = () => {
         register();
     }, [navigate]);
 
-    return <Dashboard handleLogout={handleLogout} />;
+    return (
+        <Dashboard handleLogout={handleLogout}>
+            <p>ホーム</p>
+        </Dashboard>
+    );
 };
 
 export default Home;
