@@ -40,7 +40,7 @@ export default function SignUpForm() {
         const data = new FormData(event.currentTarget);
         signUp(data.get("email"), data.get("password"))
             .then(() => {
-                navigate("/board");
+                navigate("/home");
             })
             .catch(() => {});
     };

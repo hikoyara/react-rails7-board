@@ -6,7 +6,7 @@ import { logout, getUser } from "../lib/firebase/auth";
 /* router */
 import { useNavigate } from "react-router-dom";
 
-const Board = () => {
+const Home = () => {
     const navigate = useNavigate();
 
     const handleLogout = async () => {
@@ -33,4 +33,4 @@ const Board = () => {
     return <Dashboard handleLogout={handleLogout} />;
 };
 
-export default Board;
+export default Home;

@@ -40,7 +40,7 @@ export default function SignInForm() {
         const data = new FormData(event.currentTarget);
         signIn(data.get("email"), data.get("password"))
             .then(() => {
-                navigate("/board");
+                navigate("/home");
             })
             .catch(() => {});
     };

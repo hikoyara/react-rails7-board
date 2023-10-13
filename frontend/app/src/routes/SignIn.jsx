@@ -12,7 +12,7 @@ export default function SignIn() {
         const register = async () => {
             const user = await getUser();
             if (user) {
-                navigate("/board");
+                navigate("/home");
             } else {
                 console.log("ログインしていません。");
             }
