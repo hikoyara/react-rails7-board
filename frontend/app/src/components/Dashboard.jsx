@@ -16,6 +16,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "@mui/material/Button";
 import ListItems from "./ListItems";
+/* lib */
+import { logout } from "../lib/firebase/auth";
+/* router */
+import { useNavigate } from "react-router-dom";
 
 function Copyright(props) {
     return (
@@ -78,10 +82,23 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== "open" 
 const defaultTheme = createTheme();
 
 export default function Dashboard(props) {
-    const { children, handleLogout, selected } = props;
+    const { children, selected } = props;
+
+    const navigate = useNavigate();
+
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
+    };
+
+    const handleLogout = async () => {
+        const success = await logout();
+        if (success) {
+            console.log("ログアウト成功");
+            navigate("/");
+        } else {
+            console.log("ログアウト失敗");
+        }
     };
 
     return (

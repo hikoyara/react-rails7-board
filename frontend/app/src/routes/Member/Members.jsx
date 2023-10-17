@@ -2,22 +2,12 @@ import { useEffect } from "react";
 /* components */
 import Dashboard from "../../components/Dashboard";
 /* lib */
-import { logout, getUser } from "../../lib/firebase/auth";
+import { getUser } from "../../lib/firebase/auth";
 /* router */
 import { useNavigate } from "react-router-dom";
 
 const Members = () => {
     const navigate = useNavigate();
-
-    const handleLogout = async () => {
-        const success = await logout();
-        if (success) {
-            console.log("ログアウト成功");
-            navigate("/");
-        } else {
-            console.log("ログアウト失敗");
-        }
-    };
 
     useEffect(() => {
         const register = async () => {
@@ -31,7 +21,7 @@ const Members = () => {
     }, [navigate]);
 
     return (
-        <Dashboard handleLogout={handleLogout} selected={3}>
+        <Dashboard selected={3}>
             <p>メンバー</p>
         </Dashboard>
     );
