@@ -1,10 +1,10 @@
 import { db } from "../config";
 /* firebase */
-import { collection, addDoc, Timestamp, onSnapshot, query, orderBy } from "firebase/firestore";
+import { collection, addDoc, Timestamp, onSnapshot, query, orderBy, setDoc, doc } from "firebase/firestore";
 
 export const createMember = async (id, password) => {
     try {
-        const member = await addDoc(collection(db, "members"), {
+        const member = await setDoc(doc(db, "members", id), {
             id,
             password,
             state: "Unauthenticated",
