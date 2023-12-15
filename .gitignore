@@ -1,4 +1,5 @@
 backend/tmp/cache/
+backend/tmp/pids/
 backend/log/
 frontend/app/node_modules/
 frontend/app/.env

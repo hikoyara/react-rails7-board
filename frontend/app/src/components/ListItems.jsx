@@ -7,6 +7,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AssignmentIcon from "@mui/icons-material/Assignment";
+import NoteAddIcon from "@mui/icons-material/NoteAdd";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 /* routes */
@@ -25,11 +26,17 @@ export default function ListItems(props) {
                     </ListItemIcon>
                     <ListItemText primary="Dashboard" />
                 </ListItemButton>
-                <ListItemButton selected={selected === 2}>
+                <ListItemButton onClick={() => navigate("/boards")} selected={selected === 2}>
                     <ListItemIcon>
                         <AssignmentIcon />
                     </ListItemIcon>
                     <ListItemText primary="Board" />
+                </ListItemButton>
+                <ListItemButton onClick={() => navigate("/boards/create")} selected={selected === 3}>
+                    <ListItemIcon>
+                        <NoteAddIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Create Board" />
                 </ListItemButton>
             </React.Fragment>{" "}
             <Divider sx={{ my: 1 }} />
@@ -37,13 +44,13 @@ export default function ListItems(props) {
                 <ListSubheader component="div" inset>
                     Members
                 </ListSubheader>
-                <ListItemButton onClick={() => navigate("/members")} selected={selected === 3}>
+                <ListItemButton onClick={() => navigate("/members")} selected={selected === 4}>
                     <ListItemIcon>
                         <PeopleAltIcon />
                     </ListItemIcon>
                     <ListItemText primary="All Members" />
                 </ListItemButton>
-                <ListItemButton onClick={() => navigate("/member/create")} selected={selected === 4}>
+                <ListItemButton onClick={() => navigate("/members/create")} selected={selected === 5}>
                     <ListItemIcon>
                         <GroupAddIcon />
                     </ListItemIcon>

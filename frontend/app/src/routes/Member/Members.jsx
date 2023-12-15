@@ -30,7 +30,7 @@ const Members = () => {
     }, [navigate]);
 
     return (
-        <Dashboard selected={3}>
+        <Dashboard selected={4}>
             <CustomizedTables members={members} />
         </Dashboard>
     );

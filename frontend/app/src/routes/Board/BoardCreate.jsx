@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 /* components */
 import Dashboard from "../../components/Dashboard";
-import MemberCreateForm from "../../components/MemberCreateForm";
 /* lib */
 import { getUser } from "../../lib/firebase/auth";
 /* router */
 import { useNavigate } from "react-router-dom";
 
-const MemberCreate = () => {
+const BoardCreate = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -22,10 +21,10 @@ const MemberCreate = () => {
     }, [navigate]);
 
     return (
-        <Dashboard selected={5}>
-            <MemberCreateForm />
+        <Dashboard selected={3}>
+            <p>回覧板作成</p>
         </Dashboard>
     );
 };
 
-export default MemberCreate;
+export default BoardCreate;
