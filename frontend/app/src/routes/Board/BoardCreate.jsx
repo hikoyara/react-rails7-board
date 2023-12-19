@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 /* components */
 import Dashboard from "../../components/Dashboard";
+import BoardCreateForm from "../../components/BoardCreateForm";
 /* lib */
 import { getUser } from "../../lib/firebase/auth";
 /* router */
@@ -22,7 +23,7 @@ const BoardCreate = () => {
 
     return (
         <Dashboard selected={3}>
-            <p>回覧板作成</p>
+            <BoardCreateForm />
         </Dashboard>
     );
 };
